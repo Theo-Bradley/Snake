@@ -14,6 +14,12 @@ class SNAKE_API APlayingMode : public AGameModeBase
 {
 	GENERATED_BODY()
 	
-/*public:
-	APlayingMode();*/
+public:
+	APlayingMode();
+
+	UFUNCTION(Blueprintable)
+	void Score(float amount);
+
+	UPROPERTY(EditAnywhere)
+	float currentScore;
 };

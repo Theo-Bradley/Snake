@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\unreal projects\\snake\\snake\\ue\\snake\\source\\snake\\private\\snakepawn.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\x64\\snakeeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\snake\\definitions.snake.h",
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\source\\snake\\public\\snakepawn.h",
+            "f:\\egs\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
+            "f:\\egs\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cameracomponent.generated.h",
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\source\\snake\\public\\playingmode.h",
+            "f:\\egs\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "f:\\egs\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "f:\\egs\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "f:\\egs\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\unrealeditor\\inc\\snake\\uht\\playingmode.generated.h",
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\unrealeditor\\inc\\snake\\uht\\snakepawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

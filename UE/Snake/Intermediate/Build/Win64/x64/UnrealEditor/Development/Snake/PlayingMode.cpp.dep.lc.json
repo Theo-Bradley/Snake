@@ -11,7 +11,11 @@
             "f:\\egs\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
             "f:\\egs\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
             "f:\\egs\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
-            "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\unrealeditor\\inc\\snake\\uht\\playingmode.generated.h"
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\unrealeditor\\inc\\snake\\uht\\playingmode.generated.h",
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\source\\snake\\public\\snakepawn.h",
+            "f:\\egs\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
+            "f:\\egs\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cameracomponent.generated.h",
+            "f:\\unreal projects\\snake\\snake\\ue\\snake\\intermediate\\build\\win64\\unrealeditor\\inc\\snake\\uht\\snakepawn.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
