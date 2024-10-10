@@ -1,5 +1,5 @@
 # My proj, ignore external files (uncompiled libs etc)
-C++/ext/Snake/*
+C++/Snake/ext/*
 
 # Visual Studio 2015 user specific files
 .vs/
