@@ -75,41 +75,41 @@ public:
 
 	virtual void Draw()
 	{
-		mvaddch(position.y, position.x, character);
-		if (nextPart)
-			nextPart->SnakePart::Draw();
+		mvaddch(position.y, position.x, character); //draw char at y x
+		if (nextPart) //if there's another snake part
+			nextPart->SnakePart::Draw(); //tell it to draw as well
 	}
 
 	void Move(vec amt)
 	{
-		vec oldPosition = position;
-		position += amt;
-		if (nextPart)
-			nextPart->UpdatePos(oldPosition);
+		vec oldPosition = position; //save old pos
+		position += amt; //move by amount
+		if (nextPart) //if there's another snake part
+			nextPart->UpdatePos(oldPosition); //tell it to take our old pos
 	}
 
 	void UpdatePos(vec newPos)
 	{
-		vec oldPosition = position;
-		position = newPos;
-		if (nextPart)
-			nextPart->UpdatePos(oldPosition);
+		vec oldPosition = position; //save current pos
+		position = newPos; //update pos
+		if (nextPart) //if there's another snake part
+			nextPart->UpdatePos(oldPosition); //tell it to take our old pos
 	}
 };
 
 bool KeyPressed(char* key)
 {
-	const int termChar = getch();
-	flushinp();
-	if (termChar == ERR)
-		return false;
-	*key = (char)termChar;
-	return true;
+	const int termChar = getch(); //get the most recent char from the terminal
+	flushinp(); //clear any other chars in terminal
+	if (termChar == ERR) //if no char present
+		return false; //no key pressed
+	*key = (char)termChar; //else must be a key pressed so cast it to a char and write into key
+	return true; //key pressed
 }
 
 vec ChangeDirection(vec originalDir, vec newDir)
 {
-	if (originalDir.x * newDir.x < 0 || originalDir.y * newDir.y < 0)
-		return originalDir;
-	return newDir;
+	if (originalDir.x * newDir.x < 0 || originalDir.y * newDir.y < 0) //if going back on itself
+		return originalDir; //ignore invalid new direction
+	return newDir; //new direction must be valid so return it
 }

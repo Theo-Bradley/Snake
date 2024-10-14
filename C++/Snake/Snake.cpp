@@ -30,7 +30,7 @@ int main()
         { //run frame
             char key;
 
-            if (KeyPressed(&key))
+            if (KeyPressed(&key)) //if a key is pressed
             {
                 switch (key)
                 {
@@ -51,9 +51,9 @@ int main()
                 }
             }
 
-            primaryPart->Move(moveDir);
+            primaryPart->Move(moveDir); //move snake
 
-            primaryPart->Draw();
+            primaryPart->Draw(); //draw snake
             wrefresh(window); //refresh screen
             clear(); //clear screen for next frame
 
