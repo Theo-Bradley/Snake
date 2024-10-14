@@ -8,6 +8,7 @@
 
 const int framerate = 10; //target framerate in frames per second
 bool running = true;
+const char* scoreText = "Score:\0";
 
 int main()
 {
@@ -16,12 +17,17 @@ int main()
     WINDOW* window = initscr();
     nodelay(window, true); //don't wait for input
     noecho();
+    curs_set(0);
     long long int nextFrameStart = time;
 
     SnakePart* primaryPart = new SnakePart(vec(0, 1), 
         new SnakePart(vec(0, 2),
         new SnakePart(vec(0, 3), nullptr))); //define a chain of 3 snake parts returning a reference to the first
     vec moveDir = vec(1, 0);
+
+    int score = 0;
+
+    FoodPill testPill = FoodPill(vec(5, 5));
     while (running)
     {
         time = GET_TIME_MS;
@@ -52,10 +58,21 @@ int main()
             }
 
             primaryPart->Move(moveDir); //move snake
+            if (testPill.CheckHit(primaryPart->position))
+                score += 1;
 
+            //rendering:
+            erase(); //clear screen for next frame
+            printw(scoreText);
+            mvaddstr(0, 8, std::to_string(score).c_str());
+            mvaddch(1, 0, '_');
+            for (int i = 1; i < 120; i++)
+            {
+                addch('_');
+            }
             primaryPart->Draw(); //draw snake
+            testPill.Draw();
             wrefresh(window); //refresh screen
-            clear(); //clear screen for next frame
 
             nextFrameStart += 1000 / framerate; //calculate start time for next frame
 

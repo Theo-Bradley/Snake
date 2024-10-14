@@ -4,23 +4,6 @@
 
 #define GET_TIME_MS std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
 
-class DrawableObject
-{
-public:
-	chtype character = (chtype)'x';
-
-public:
-	DrawableObject(char _character)
-	{
-		this->character = (chtype)_character;
-	}
-
-	virtual void Draw()
-	{
-		addch(character);
-	}
-};
-
 struct vec
 {
 	int x = 0;
@@ -58,11 +41,38 @@ struct vec
 		y -= a.y;
 		return *this;
 	}
+
+	bool operator==(const vec& a)
+	{
+		return x == a.x && y == a.y;
+	}
+
+	bool operator!=(const vec& a)
+	{
+		return x != a.x || y != a.y;
+	}
+};
+
+class DrawableObject
+{
+public:
+	chtype character = (chtype)'x';
+	vec position;
+
+public:
+	DrawableObject(char _character)
+	{
+		this->character = (chtype)_character;
+	}
+
+	virtual void Draw()
+	{
+		mvaddch(position.y, position.x, character);
+	}
 };
 
 class SnakePart: public DrawableObject
 {
-	vec position;
 	SnakePart* nextPart = nullptr;
 
 public:
@@ -94,6 +104,22 @@ public:
 		position = newPos; //update pos
 		if (nextPart) //if there's another snake part
 			nextPart->UpdatePos(oldPosition); //tell it to take our old pos
+	}
+};
+
+class FoodPill: public DrawableObject
+{
+public:
+	FoodPill(vec _position): DrawableObject('x')
+	{
+		this->position = _position;
+	}
+
+	bool CheckHit(vec snakePos)
+	{
+		if (snakePos == position) //if the snake position is same as the pill
+			return true; //hit
+		return false; //else no hit
 	}
 };
 
