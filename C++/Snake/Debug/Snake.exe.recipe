@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>F:\Unreal Projects\Snake\Snake\C++\Snake\build\Debug\Snake.exe</FullPath>
+      <FullPath>F:\Unreal Projects\Snake\Snake\C++\Snake\build\Win32\Debug\Snake.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

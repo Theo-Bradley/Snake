@@ -3,16 +3,69 @@
 
 #include <iostream>
 #define PDC_RGB
-#include "pdcurses/curses.h"
+#include "classes.h"
+//#include "pdcurses/curses.h"
+
+const int framerate = 10; //target framerate in frames per second
+bool running = true;
 
 int main()
 {
-    WINDOW* window = initscr();
-    waddch(window, (chtype)'o');
+    long long int time = GET_TIME_MS;
 
-    while (true)
+    WINDOW* window = initscr();
+    nodelay(window, true); //don't wait for input
+    noecho();
+    long long int nextFrameStart = time;
+
+    SnakePart* primaryPart = new SnakePart(vec(0, 1), 
+        new SnakePart(vec(0, 2),
+        new SnakePart(vec(0, 3), nullptr))); //define a chain of 3 snake parts returning a reference to the first
+    vec moveDir = vec(1, 0);
+    while (running)
     {
-        wrefresh(window);
+        time = GET_TIME_MS;
+
+        if (time >= nextFrameStart) //is it time to start running frame?
+        { //run frame
+            char key;
+
+            if (KeyPressed(&key))
+            {
+                switch (key)
+                {
+                    case 'q':
+                        return 0; //exit
+                    case 'w':
+                        moveDir = ChangeDirection(moveDir, vec(0, -1));
+                        break;
+                    case 'a':
+                        moveDir = ChangeDirection(moveDir, vec(-1, 0));
+                        break;
+                    case 's':
+                        moveDir = ChangeDirection(moveDir, vec(0, 1));
+                        break;
+                    case 'd':
+                        moveDir = ChangeDirection(moveDir, vec(1, 0));
+                        break;
+                }
+            }
+
+            primaryPart->Move(moveDir);
+
+            primaryPart->Draw();
+            wrefresh(window); //refresh screen
+            clear(); //clear screen for next frame
+
+            nextFrameStart += 1000 / framerate; //calculate start time for next frame
+
+            if (time > nextFrameStart) //if late to start next frame
+            {
+                //std::cout << "Warning: Slow Frame Detected\n";
+            }
+        }
+        else //if not time to run frame then wait (avoid resource hogging)
+            std::this_thread::sleep_for(std::chrono::milliseconds(1)); //wait for 1ms
     }
 
     system("pause");
