@@ -76,6 +76,7 @@ class SnakePart: public DrawableObject
 public:
 	SnakePart* nextPart = nullptr;
 	bool spawnFlag = false;
+	bool isAlive = true;
 
 	SnakePart(vec _position, SnakePart* _nextPart): DrawableObject('O')
 	{
@@ -86,24 +87,35 @@ public:
 
 	virtual void Draw()
 	{
-		mvaddch(position.y, position.x, character); //draw char at y x
-		if (nextPart) //if there's another snake part
-			nextPart->SnakePart::Draw(); //tell it to draw as well
+		if (isAlive)
+		{
+			mvaddch(position.y, position.x, character); //draw char at y x
+			if (nextPart) //if there's another snake part
+				nextPart->SnakePart::Draw(); //tell it to draw as well
+		}
+		else
+		{
+			mvaddstr(14, 53, "You are DEAD!");
+			mvaddstr(15, 49, "Press 'R' to restart!");
+		}
 	}
 
 	void Move(vec amt)
 	{
-		vec oldPosition = position; //save old pos
-		position += amt; //move by amount
-		if (position.x < 0 || position.x > 119 || position.y < 2 || position.y > 29)
-			Dead();
-		if (nextPart) //if there's another snake part
-			nextPart->UpdatePos(oldPosition); //tell it to take our old pos
+		if (isAlive)
+		{
+			vec oldPosition = position; //save old pos
+			position += amt; //move by amount
+			if (position.x < 0 || position.x > 119 || position.y < 2 || position.y > 29)
+				Dead();
+			if (nextPart) //if there's another snake part
+				nextPart->UpdatePos(oldPosition); //tell it to take our old pos
+		}
 	}
 
 	void Dead()
 	{
-		//do something
+		isAlive = false;
 	}
 
 	void UpdatePos(vec newPos)

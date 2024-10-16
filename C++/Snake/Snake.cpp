@@ -54,6 +54,16 @@ int main()
                     case 'd':
                         moveDir = ChangeDirection(moveDir, vec(1, 0));
                         break;
+                    case 'r':
+                    {
+                        primaryPart = new SnakePart(vec(0, 2),
+                            new SnakePart(vec(0, 3),
+                            new SnakePart(vec(0, 4), nullptr))); //reinit primary part
+                        moveDir = vec(1, 0);
+                        score = 0;
+                        foodPill = FoodPill(vec(5, 5));
+                        break;
+                    }
                 }
             }
 
