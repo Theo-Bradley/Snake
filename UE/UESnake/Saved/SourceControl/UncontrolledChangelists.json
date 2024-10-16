@@ -1,0 +1,19 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Unreal Projects/Theo/Snake/Snake/UE/UESnake/Content/01_MinLevel.umap",
+				"C:/Unreal Projects/Theo/Snake/Snake/UE/UESnake/Content/cube.uasset",
+				"C:/Unreal Projects/Theo/Snake/Snake/UE/UESnake/Content/Blueprints/PrimaryPart.uasset",
+				"C:/Unreal Projects/Theo/Snake/Snake/UE/UESnake/Content/Blueprints/PlayingMode.uasset",
+				"C:/Unreal Projects/Theo/Snake/git/Snake/UE/UESnake/Content/Blueprints/PrimaryPart.uasset",
+				"C:/Unreal Projects/Theo/Snake/git/Snake/UE/UESnake/Content/Blueprints/FoodPill.uasset",
+				"C:/Unreal Projects/Theo/Snake/git/Snake/UE/UESnake/Content/Blueprints/PlayingMode.uasset",
+				"C:/Unreal Projects/Theo/Snake/git/Snake/UE/UESnake/Content/01_MinLevel.umap"
+			]
+		}
+	]
+}
