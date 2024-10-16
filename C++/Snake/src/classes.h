@@ -73,9 +73,10 @@ public:
 
 class SnakePart: public DrawableObject
 {
-	SnakePart* nextPart = nullptr;
-
 public:
+	SnakePart* nextPart = nullptr;
+	bool spawnFlag = false;
+
 	SnakePart(vec _position, SnakePart* _nextPart): DrawableObject('O')
 	{
 		this->position = _position;
@@ -104,6 +105,23 @@ public:
 		position = newPos; //update pos
 		if (nextPart) //if there's another snake part
 			nextPart->UpdatePos(oldPosition); //tell it to take our old pos
+		if (nextPart == nullptr && spawnFlag)
+		{
+			this->nextPart = new SnakePart(oldPosition, nullptr); //spawn new snake part one below tail
+			spawnFlag = false;
+		}
+		/*else
+		{
+			std::cout << "Tried to spawn new part on not tail part!\n";
+		}*/
+	}
+
+	SnakePart* Tail()
+	{
+		if (nextPart == nullptr)
+			return this;
+		else
+			return nextPart->Tail();
 	}
 };
 

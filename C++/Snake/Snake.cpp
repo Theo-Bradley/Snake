@@ -58,10 +58,12 @@ int main()
             }
 
             primaryPart->Move(moveDir); //move snake
+
             if (foodPill.CheckHit(primaryPart->position))
             {
                 score += 1;
                 foodPill.Move(RandomPos());
+                primaryPart->Tail()->spawnFlag = true;
             }
 
             //rendering:
