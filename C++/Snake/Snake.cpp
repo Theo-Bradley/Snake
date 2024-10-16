@@ -20,14 +20,14 @@ int main()
     curs_set(0);
     long long int nextFrameStart = time;
 
-    SnakePart* primaryPart = new SnakePart(vec(0, 1), 
-        new SnakePart(vec(0, 2),
-        new SnakePart(vec(0, 3), nullptr))); //define a chain of 3 snake parts returning a reference to the first
+    SnakePart* primaryPart = new SnakePart(vec(0, 2), 
+        new SnakePart(vec(0, 3),
+        new SnakePart(vec(0, 4), nullptr))); //define a chain of 3 snake parts returning a reference to the first
     vec moveDir = vec(1, 0);
 
     int score = 0;
 
-    FoodPill testPill = FoodPill(vec(5, 5));
+    FoodPill foodPill = FoodPill(vec(5, 5));
     while (running)
     {
         time = GET_TIME_MS;
@@ -58,8 +58,11 @@ int main()
             }
 
             primaryPart->Move(moveDir); //move snake
-            if (testPill.CheckHit(primaryPart->position))
+            if (foodPill.CheckHit(primaryPart->position))
+            {
                 score += 1;
+                foodPill.Move(RandomPos());
+            }
 
             //rendering:
             erase(); //clear screen for next frame
@@ -71,7 +74,7 @@ int main()
                 addch('_');
             }
             primaryPart->Draw(); //draw snake
-            testPill.Draw();
+            foodPill.Draw();
             wrefresh(window); //refresh screen
 
             nextFrameStart += 1000 / framerate; //calculate start time for next frame

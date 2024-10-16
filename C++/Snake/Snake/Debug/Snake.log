@@ -1,0 +1,11 @@
+﻿  Snake.cpp
+C:\Unreal Projects\Theo\Snake\git\Snake\C++\Snake\src\classes.h(169,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Snake.cpp')
+  
+C:\Unreal Projects\Theo\Snake\git\Snake\C++\Snake\src\classes.h(171,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Snake.cpp')
+  
+C:\Unreal Projects\Theo\Snake\git\Snake\C++\Snake\src\classes.h(172,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Snake.cpp')
+  
+  Snake.vcxproj -> C:\Unreal Projects\Theo\Snake\git\Snake\C++\Snake\build\Win32\Debug\Snake.exe
