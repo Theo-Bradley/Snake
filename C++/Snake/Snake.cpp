@@ -62,7 +62,10 @@ int main()
             if (foodPill.CheckHit(primaryPart->position))
             {
                 score += 1;
-                foodPill.Move(RandomPos());
+                vec newFoodPos = RandomPos();
+                while (newFoodPos == foodPill.position) //if new pos and old pos are the same
+                    newFoodPos = RandomPos(); //keep generating new positions until they differ
+                foodPill.Move(newFoodPos);
                 primaryPart->Tail()->spawnFlag = true;
             }
 

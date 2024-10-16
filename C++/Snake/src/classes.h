@@ -186,7 +186,7 @@ vec RandomPos()
 	float pct = (float)initalRandom / 99999; //get a percentage from this value
 	int x = std::round(pct * 120); //round and clamp to 120 (default width of term)
 	initalRandom = Random(); //get a new random number
-	pct = initalRandom / 99999; //..
-	int y = std::round(pct * 37) + 3; //.. 40 (default height of term I think) plus the score at the top
+	pct = (float)initalRandom / 99999; //..
+	int y = std::round(pct * 27) + 3; //.. 30 (default height of term I think) plus the score at the top
 	return vec(x, y); //construct vec and return
 }
