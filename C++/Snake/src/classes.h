@@ -95,8 +95,15 @@ public:
 	{
 		vec oldPosition = position; //save old pos
 		position += amt; //move by amount
+		if (position.x < 0 || position.x > 119 || position.y < 2 || position.y > 29)
+			Dead();
 		if (nextPart) //if there's another snake part
 			nextPart->UpdatePos(oldPosition); //tell it to take our old pos
+	}
+
+	void Dead()
+	{
+		//do something
 	}
 
 	void UpdatePos(vec newPos)
@@ -184,9 +191,9 @@ vec RandomPos()
 {
 	int initalRandom = Random(); //get a random number between 0 and 99999
 	float pct = (float)initalRandom / 99999; //get a percentage from this value
-	int x = std::round(pct * 120); //round and clamp to 120 (default width of term)
+	int x = std::round(pct * 119); //round and clamp to 120 (default width of term)
 	initalRandom = Random(); //get a new random number
 	pct = (float)initalRandom / 99999; //..
-	int y = std::round(pct * 27) + 3; //.. 30 (default height of term I think) plus the score at the top
+	int y = std::round(pct * 26) + 3; //.. 30 (default height of term I think) plus the score at the top
 	return vec(x, y); //construct vec and return
 }
