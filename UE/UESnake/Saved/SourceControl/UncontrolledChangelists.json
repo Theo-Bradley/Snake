@@ -5,6 +5,10 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Unreal Projects/Snake/UE/UESnake/Content/Blueprints/PrimaryPart.uasset",
+				"C:/Unreal Projects/Snake/UE/UESnake/Content/Blueprints/SecondaryPart.uasset",
+				"C:/Unreal Projects/Snake/UE/UESnake/Content/Blueprints/FoodPill.uasset",
+				"C:/Unreal Projects/Snake/UE/UESnake/Content/01_MinLevel.umap",
 				"F:/Unreal Projects/Snake/Snake/UE/UESnake/Content/Blueprints/SecondaryPart.uasset",
 				"F:/Unreal Projects/Snake/Snake/UE/UESnake/Content/Blueprints/PrimaryPart.uasset",
 				"F:/Unreal Projects/Snake/Snake/UE/UESnake/Content/01_MinLevel.umap",
