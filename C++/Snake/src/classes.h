@@ -108,6 +108,16 @@ public:
 			position += amt; //move by amount
 			if (position.x < 0 || position.x > 119 || position.y < 2 || position.y > 29)
 				Dead();
+			SnakePart* currentPart = nextPart;
+			while (currentPart != nullptr)
+			{
+				if (position == currentPart->position)
+				{
+					Dead();
+					break;
+				}
+				currentPart = currentPart->nextPart;
+			}
 			if (nextPart) //if there's another snake part
 				nextPart->UpdatePos(oldPosition); //tell it to take our old pos
 		}

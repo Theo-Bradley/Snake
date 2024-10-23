@@ -1,4 +1,10 @@
 ﻿  Snake.cpp
+C:\Unreal Projects\Snake\C++\Snake\src\classes.h(206,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Snake.cpp')
+  
+C:\Unreal Projects\Snake\C++\Snake\src\classes.h(209,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Snake.cpp')
+  
 Snake.obj : error LNK2019: unresolved external symbol addch referenced in function main
 Snake.obj : error LNK2019: unresolved external symbol curs_set referenced in function main
 Snake.obj : error LNK2019: unresolved external symbol endwin referenced in function main
@@ -6,7 +12,7 @@ Snake.obj : error LNK2019: unresolved external symbol erase referenced in functi
 Snake.obj : error LNK2019: unresolved external symbol flushinp referenced in function "bool __cdecl KeyPressed(char *)" (?KeyPressed@@YA_NPEAD@Z)
 Snake.obj : error LNK2019: unresolved external symbol initscr referenced in function main
 Snake.obj : error LNK2019: unresolved external symbol mvaddch referenced in function "public: virtual void __cdecl DrawableObject::Draw(void)" (?Draw@DrawableObject@@UEAAXXZ)
-Snake.obj : error LNK2019: unresolved external symbol mvaddstr referenced in function main
+Snake.obj : error LNK2019: unresolved external symbol mvaddstr referenced in function "public: virtual void __cdecl SnakePart::Draw(void)" (?Draw@SnakePart@@UEAAXXZ)
 Snake.obj : error LNK2019: unresolved external symbol nodelay referenced in function main
 Snake.obj : error LNK2019: unresolved external symbol noecho referenced in function main
 Snake.obj : error LNK2019: unresolved external symbol printw referenced in function main
@@ -14,4 +20,4 @@ Snake.obj : error LNK2019: unresolved external symbol wgetch referenced in funct
 Snake.obj : error LNK2019: unresolved external symbol wrefresh referenced in function main
 Snake.obj : error LNK2001: unresolved external symbol stdscr
 lib\pdcurses.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Unreal Projects\Theo\Snake\git\Snake\C++\Snake\build\x64\Debug\Snake.exe : fatal error LNK1120: 14 unresolved externals
+C:\Unreal Projects\Snake\C++\Snake\build\x64\Debug\Snake.exe : fatal error LNK1120: 14 unresolved externals
